@@ -1,0 +1,17 @@
+name: Deploy Pipelines - PROD
+
+on:
+  workflow_dispatch:
+      
+jobs:
+  deploy_on_prod:
+    uses: pagopa/dx/.github/workflows/legacy_deploy_pipelines.yaml@main
+    name: Deploy on PROD
+    secrets: inherit
+    with:
+      environment: 'prod'
+      resource_group_name: 'io-p-messages-weu-prod01-push-notif-rg'
+      app_name: 'io-p-push-notif-fn'
+      use_staging_slot: true
+      use_private_agent: false
+      health_check_path: '/api/v1/info'
