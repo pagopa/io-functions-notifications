@@ -2,12 +2,12 @@ name: Code Review
 
 on:
   workflow_dispatch:
-  # pull_request:
-  #   types: [opened, synchronize]
-  #   paths:
-  #     - "*"
-  #     - "!infra/*"
-  #     - "!.github/*"
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - "*"
+      - "!infra/*"
+      - "!.github/*"
       
 jobs:
   js_code_review:
